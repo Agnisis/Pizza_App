@@ -7,8 +7,8 @@ const path =require('path');
 
 
 
-// Asets 
-app.use(express.static('public'))
+// Assets 
+app.use(express.static('public'));
 
 app.get('/',(req,res)=>{
 // res.snde("Hello from server");
