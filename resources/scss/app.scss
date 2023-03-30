@@ -5,7 +5,7 @@ body{
     font-family: 'lato',sans-serif;
     -webkit-font-smoothing:antialiased;
     color: $dark;
-    height: 4000px;
+    
 }
 
 nav li:last-child a{
@@ -32,5 +32,15 @@ section.hero{
 }
 .add-to-cart{
 
-    border:2px solid green;
+    border:2px solid $primary;
+    color: $primary;
+ transition: $smooth;
+    border-radius: 10px;
+
+    &:hover{
+        background-color: $primary;
+        color: white;
+        border-color: $pure;
+
+    }
 }
