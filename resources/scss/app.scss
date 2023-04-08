@@ -44,3 +44,18 @@ section.hero{
 
     }
 }
+
+.btn-primary{
+    background-color: $primary;
+    transition: $smooth;
+    &:hover{
+        background-color: $primary-hover;
+
+    }
+}
+
+
+
+section.cart{
+    background: $secondary;
+}

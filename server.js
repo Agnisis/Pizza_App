@@ -10,11 +10,6 @@ const path =require('path');
 // Assets 
 app.use(express.static('public'));
 
-app.get('/',(req,res)=>{
-// res.snde("Hello from server");
-res.render('home');
-})
-
 
 
 
@@ -23,6 +18,21 @@ res.render('home');
 app.use(expresslayout);
 app.set('views',path.join(__dirname,'/resources/views'))
 app.set('view engine','ejs');
+
+
+
+
+app.get('/',(req,res)=>{
+    // res.snde("Hello from server");
+    res.render('home');
+    })
+    
+    
+    app.get('/cart',(req,res)=>{
+    res.render('customers/cart')
+    })
+
+    
 app.listen(PORT,()=>{
     console.log('====================================');
     console.log(`listening on port  ${PORT}`);
