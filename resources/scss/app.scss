@@ -48,6 +48,7 @@ section.hero{
 .btn-primary{
     background-color: $primary;
     transition: $smooth;
+
     &:hover{
         background-color: $primary-hover;
 
@@ -56,6 +57,13 @@ section.hero{
 
 
 
+
+
 section.cart{
     background: $secondary;
+    
+}
+
+.amount{
+    color: $primary;
 }
