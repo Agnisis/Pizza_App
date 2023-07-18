@@ -1,22 +1,20 @@
 // all web related routes
-
+const authController = require('../app/http/controllers/authControllers')
+const cartController = require('../app/http/controllers/customers/cartController')
+const homeController=require('../app/http/controllers/homeController')
 function initRoutes(app) {
+     
+    app.get('/',homeController().index )
 
-    app.get('/', (req, res) => {
-        // res.snde("Hello from server");
-        res.render('home');
-    })
-    app.get('/cart', (req, res) => {
-        res.render('customers/cart')
-    })
+    // app.get('/cart', (req, res) => {
+    //     res.render('customers/cart')
+    // })
 
-    app.get('/login', (req, res) => {
-        res.render('auth/login')
-    })
+    app.get('/cart',cartController().index)
 
-    app.get('/register', (req, res) => {
-        res.render('auth/register')
-    })
+    app.get('/login', authController().login)
+
+    app.get('/register',authController().register)
 }
 
 

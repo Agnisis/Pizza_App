@@ -27,13 +27,7 @@ app.set('view engine','ejs');
     // res.render('customers/cart')
     // })
     
-    // app.get('/login',(req,res)=>{
-        //     res.render('auth/login')
-        // })
-        
-        // app.get('/register',(req,res)=>{
-            //     res.render('auth/register')
-            // })
+   
             
             require('./routes/web')(app)
     
