@@ -5,6 +5,25 @@ const expresslayout=require('express-ejs-layouts');
 const PORT=process.env.PORT || 3000;
 const path =require('path');
 const initRoutes = require('./routes/web');
+const mongoose = require('mongoose');
+const url = 'mongodb://localhost:27017/Pizza';
+
+
+//db connection
+mongoose.connect(url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const connection = mongoose.connection;
+connection.on('error', (err) => {
+  console.error('Connection Failed:', err);
+});
+
+connection.once('open', () => {
+  console.log('Database Connected');
+});
+
 
 // Assets 
 app.use(express.static('public'));

@@ -1,15 +1,23 @@
-function homeController(){
+const Menu=require('../../models/menu')
+
+
+function homeController() {
 
     //factory functions pattern of programs
-    return{
-         index(req,res){
+    return {
+        async index(req, res) {
+             
+            const pizzas=await Menu.find()
+             res.render('home',{pizzas:pizzas})
+            console.log(pizzas);
+            // Menu.find().then(function(pizzas){
+            // console.log(pizzas);
+            //    return  res.render('home',{pizzas:pizzas})
+            // })
 
-            
-            res.render('home') 
-
-         }
+        }
     }
 
 }
 
-module.exports=homeController
+module.exports = homeController
