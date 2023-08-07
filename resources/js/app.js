@@ -1,9 +1,26 @@
-let addToCart=document.querySelectorAll('.add-to-cart')
-addToCart.forEach((btn)=>{
-btn.addEventListener('click',(e)=>{
+import axios from 'axios'
 
-    console.log(e);
+let addToCart = document.querySelectorAll('.add-to-cart')
+function updateCart(pizza){
 
-    const ang=45
-})
-})
+    //axios uses
+    axios.post('/update-cart',pizza).then(res=>{
+        console.log(res)
+    }) 
+    .catch(error => {
+        console.error('Error:', error);
+      });
+
+}
+
+addToCart.forEach((btn) => {
+
+
+                btn.addEventListener('click', (e) => {
+
+                    let pizza=JSON.parse(btn.dataset.pizza)
+                    updateCart(pizza)
+                    console.log(pizza);
+                })
+            })
+        

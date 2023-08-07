@@ -6,11 +6,13 @@ function initRoutes(app) {
      
     app.get('/',homeController().index )
 
-    app.get('/cart',cartController().index)
+    
 
     app.get('/login', authController().login)
 
     app.get('/register',authController().register)
+    app.get('/cart',cartController().index)
+    app.post('/update-cart',cartController().update)
 
      // app.get('/cart', (req, res) => {
     //     res.render('customers/cart')
