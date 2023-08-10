@@ -49,6 +49,13 @@ app.use(
 );
 
 
+//global middelwere
+
+app.use((req,res,next)=>{
+   res.locals.session=req.session
+   next()
+})
+
 
 
 // Assets 

@@ -19,6 +19,7 @@
     <nav class="container mx-auto mx-5 flex items-center justify-between py-4">
         <div>
             <img src="/images/logo.png" alt="logo">
+           
         </div>
         <div>
             <ul class="flex items-center ">
@@ -26,9 +27,9 @@
                 <li class="ml-6"><a href="#">offers</a></li>
                 <li class="ml-6"><a href="/register">register</a></li>
                 <li class="ml-6"><a href="/login">login</a></li>
-                <li class="ml-6"><a href="/cart" class="inline-block px-4 py-2 rounded-full"><img src="/images/cart.png"
-                            alt="cart"></a></li>
-
+                <li class="ml-6"><a href="/cart" class="inline-block px-4 py-2 rounded-full flex items-center gap-2">
+                    <span id="cart-counter" class=" text-white font-bold"><%=session.cart? session.cart.totalQty :" " %></span>
+                <img src="/images/cart.png"alt="cart" ></a></li>
 
             </ul>
         </div>

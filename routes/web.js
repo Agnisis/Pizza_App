@@ -5,9 +5,7 @@ const homeController=require('../app/http/controllers/homeController')
 function initRoutes(app) {
      
     app.get('/',homeController().index )
-
     
-
     app.get('/login', authController().login)
 
     app.get('/register',authController().register)
