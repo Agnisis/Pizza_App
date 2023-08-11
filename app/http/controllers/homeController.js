@@ -9,11 +9,11 @@ function homeController() {
              
             const pizzas=await Menu.find()
              res.render('home',{pizzas:pizzas})
-            // console.log(pizzas);
-            // Menu.find().then(function(pizzas){
-            // console.log(pizzas);
-            //    return  res.render('home',{pizzas:pizzas})
-            // })
+            console.log(pizzas);
+            Menu.find().then(function(pizzas){
+            console.log(pizzas);
+               return  res.render('home',{pizzas:pizzas})
+            })
 
         }
     }

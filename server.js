@@ -63,6 +63,8 @@ app.use(express.static('public'));
 
 //settemplate engine
 app.use(express.json())
+app.use(express.urlencoded({extended:false}))
+
 app.use(expresslayout);
 app.set('views', path.join(__dirname, '/resources/views'))
 app.set('view engine', 'ejs');

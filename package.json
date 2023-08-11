@@ -14,6 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
     "connect-mongo": "^5.0.0",
     "cookie-parser": "^1.4.6",
     "cross-env": "^7.0.3",
@@ -24,8 +25,10 @@
     "express-flash": "^0.0.2",
     "express-session": "^1.17.3",
     "laravel-mix": "^6.0.49",
+    "mongodb": "^5.7.0",
     "mongoose": "^7.4.2",
-    "noty": "^3.2.0-beta-deprecated"
+    "noty": "^3.2.0-beta-deprecated",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "laravel-vite-plugin": "^0.7.8",
