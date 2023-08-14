@@ -41,7 +41,7 @@ addToCart.forEach((btn) => {
 
                     let pizza=JSON.parse(btn.dataset.pizza)
                     updateCart(pizza)
-                    console.log(pizza);
+                    // console.log(pizza);
                 })
             })
         
