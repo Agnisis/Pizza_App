@@ -41,7 +41,7 @@ addToCart.forEach(function (btn) {
   btn.addEventListener('click', function (e) {
     var pizza = JSON.parse(btn.dataset.pizza);
     updateCart(pizza);
-    console.log(pizza);
+    // console.log(pizza);
   });
 });
 
