@@ -1,11 +1,13 @@
 <section class="orders light-section">
     <div class="container mx-auto pt-12 p-8">
         <h1 class="font-bold p-7 text-2xl mb-4">All orders</h1>
-        <div id="sucess-alert" class="flex items-center justify-center bg-green-500 text-white font-bold px-4 py-4" role="alert">
+        <% if(messages.success){ %>
+        <div id="success-alert" class="flex items-center justify-center bg-green-500 text-white font-bold px-4 py-4" role="alert">
             
-            <p class="text-xl">!!!  order placed Sucessfully   !!!</p>
+            <p class="text-xl"><%=messages.success%></p>
           
         </div>
+        <% } %>
 
 
         <table class="w-full table-auto bg-white">
@@ -20,16 +22,30 @@
             </thead>
 
             <tbody>
-                <tr>
-                    <td class="border px-4 py-4">
-                        <a class="link" href="/">idddddddddddddddddddddddddddddd</a>
-                    </td>
-
-                    <td class="border px-4 py-4">Test Address</td>
-                    <td class="border px-4 py-4">9.40 am</td>
-
-                </tr>
+                <%if(orders.length){%>
+                    <%orders.forEach((order)=>{ %>
+                        <tr>
+                            <td class="border px-4 py-4">
+                                <a class="link" href="/"><%= order._id %></a>
+                            </td>
+        
+                            <td class="border px-4 py-4">
+                                <%= order.address %>
+                            </td>
+                            <td class="border px-4 py-4">
+                                <%= moment(order.createdAt).format('hh:mm:A') %>
+                            </td>
+        
+                        </tr>
+                   <% })%>
+                
             </tbody>
+            
+            <%}else{%>
+            <tr>
+                <td class="p-4">No orders Found</td>
+            </tr>
+                <%}%>
 
         </table>
     </div>

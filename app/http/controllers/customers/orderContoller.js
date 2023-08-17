@@ -1,4 +1,6 @@
 const Order = require('../../../models/order')
+const moment=require('moment')
+
 function orderController() {
     return {
         store(req, res) {
@@ -16,8 +18,9 @@ function orderController() {
                 address
             })
             order.save().then(result => {
-                req.flash('sucess', "order Placed Succesfully")
-                res.redirect('/')
+                req.flash('success', "order Placed Succesfully")
+                delete req.session.cart
+                res.redirect('/customer/orders')
             }).catch(err => {
                 req.flash('error', "Something Went Wrong")
                 return res.redirect('/cart')
@@ -27,9 +30,9 @@ function orderController() {
     
         async index(req, res) { // Make the function asynchronous
         try {
-            const orders = await Order.find({ customerId: req.user._id });
+            const orders = await Order.find({ customerId: req.user._id },null,{sort:{'createdAt':-1}});
             
-            res.render('customers/orders',{orders:orders})
+            res.render('customers/orders',{orders:orders,moment:moment})
             // Handle and send the orders to the client as needed
             
         } catch (error) {

@@ -25,6 +25,7 @@
     "express-flash": "^0.0.2",
     "express-session": "^1.17.3",
     "laravel-mix": "^6.0.49",
+    "moment": "^2.29.4",
     "mongodb": "^5.7.0",
     "mongoose": "^7.4.2",
     "noty": "^3.2.0-beta-deprecated",
