@@ -2,14 +2,15 @@
     <!-- hero section -->
 
 
-    <section class="hero py-16 pl-16">
-        <div class="container mx-auto flex items-center justify-between">
+    <section class="hero py-16 pl-14 pr-12 mx-auto container">
+        <div class="container mx-auto flex items-center justify-between mx-4 px-4">
             <div class="w-1/2">
-                <h6 class="text-lg"><em>are you hungry ?</em></h6>
+                <img src="/images/IndianTandooriPaneer.jpg" alt="" class="my-2 rounded-full border-2 border-green-400 w-3/4">
+                <h6 class="text-lg mt-5"><em>What are you waiting for ?</em></h6>
                 <h1 class="text-6xl font-bold">Dont'wait !</h1>
                 <button class=" btn-primary rounded-full px-6 py-2 text-white font-bold mt-4">Order Now</button>
             </div>
-            <img src="/images/hero-pizza.png" alt="">
+            <img src="/images/pizzaop.jpg" alt="" class="rounded-lg w-3/4 h-1/4">
             <div>
 
             </div>
@@ -22,15 +23,15 @@
     <!-- menu section -->
 
 <section class="menu container mx-auto p-8">
-    <h1 class="text-xl font-bold mb-8">All pizzas</h1>
+    <h1 class="text-xl font-bold mb-8">All Pizzas</h1>
 
-    <div class=" grid grid-cols-4 col-gap-12 row-gap-16">
+    <div class=" grid grid-cols-5 col-gap-14 row-gap-16">
 
         <% pizzas.forEach(function(pizza){ %>
                   
-            <div class="w-64" >
-                <img src="/images/<%= pizza.image%>" alt="" class="h-40 mb-4 mx-auto">
-                <div class="text-center">
+            <div class=" w-72 my-3 rounded-lg bg-green-100 gap-x-2" >
+                <img src="/images/<%= pizza.image%>" alt="" class="h-40 mb-4 mx-auto my-3">
+                <div class="text-center ">
                     <h2 class="mb-4 text-lg "><%= pizza.name%></h2>
                     <span class="size text-xs py-1 px-4 rounded-full uppercase"><%= pizza.size%></span>
                     <div class="flex items-center justify-around my-6">

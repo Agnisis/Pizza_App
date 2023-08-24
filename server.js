@@ -1,3 +1,5 @@
+//nessasory imports o packages of nodejs 
+
 require('dotenv').config()
 const express = require('express');
 const app = express();
@@ -13,20 +15,22 @@ const MongoStore = require('connect-mongo')
 const url = 'mongodb://localhost:27017/Pizza';
 const passport=require('passport')
 
-// DB connection
+
+
+
+
+
+// Mongo DB connection
 mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-
 const connection = mongoose.connection;
-
 connection.on('error', (err) => {
   console.error('Connection Failed:', err);
 });
-
 connection.once('open', () => {
-  console.log('Database Connected');
+  console.log('Database Connected to Mongo DB Local Host');
 });
 
 
@@ -54,15 +58,19 @@ app.use(
 
   })
 );
+
+
 //passport config 
 const passportInit=require('./app/config/passport')
 passportInit(passport)
 
+
+//session middlewares
 app.use(passport.initialize())
 app.use(passport.session())
 
-//global middelwere
 
+//global middelwere
 app.use((req,res,next)=>{
    res.locals.session=req.session
    res.locals.user=req.user
@@ -70,20 +78,13 @@ app.use((req,res,next)=>{
    next()
 })
 
-
-
-
- 
-
-
-
+//middlewares  setup 
 // Assets 
 app.use(express.static('public'));
 
 //settemplate engine
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
-
 app.use(expresslayout);
 app.set('views', path.join(__dirname, '/resources/views'))
 app.set('view engine', 'ejs');
@@ -92,21 +93,21 @@ app.set('view engine', 'ejs');
 //     // res.snde("Hello from server");
 //     res.render('home');
 //     })
-
-
-
-
 // app.get('/cart',(req,res)=>{
 // res.render('customers/cart')
 // })
 
 
 
+
+
+//roputing setup
 require('./routes/web')(app)
 
+//server setup
 app.listen(PORT, () => {
   console.log('====================================');
   console.log(`listening on port  ${PORT}`);
-  console.log("its a fantastic server ");
+  console.log("Backend server is running ");
   console.log('====================================');
 })

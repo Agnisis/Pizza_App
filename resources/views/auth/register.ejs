@@ -1,9 +1,9 @@
 
 
-<section class="register flex justify-center pt-24">
+<section class="register flex justify-center pt-20">
 
-    <div class="w-full max-w-xs">
-        <form action="/register" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div class="w-full max-w-md text-xl">
+        <form action="/register" method="post" class=" border-2 border-cyan-200 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <%if(messages.error)    {%>
           <span class="text-red-500 text-sm">All Fields are required</span>
 
@@ -28,10 +28,10 @@
             
           </div>
           <div class="flex items-center justify-between">
-            <button class="bg-orange-500 rounded-full hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            <button class="bg-green-500 rounded-full hover:bg-green-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
               Register
             </button>
-            <a class="inline-block align-baseline font-bold text-sm text-orange-500 hover:text-orange-800" href="/login">
+            <a class="inline-block align-baseline font-bold text-sm text-green-500 hover:text-green-300" href="/login">
               Already have account?
             </a>
           </div>
