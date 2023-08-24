@@ -1,3 +1,6 @@
+import axios from "axios";
+import Noty from "noty";
+import moment from "moment";
 function initAdmin() {
   const orderTableBody = document.querySelector("#orderTableBody");
   let orders = [];
@@ -5,20 +8,32 @@ function initAdmin() {
   axios.get("/admin/orders", {
     headers: {
       "X-Requested-with": "XMLHttpRequest",
-    }.then((res) => {
-      orders = res.data;
+    }
+      
+  }).then((res) => {
+        orders = res.data;
 
-      markup = generateMArkup(orders);
-      orderTableBody.innerHTML=markup
-    }).catch(err=>{
-        console.log(err)
-    }),
-  });
+        markup = generateMarkup(orders);
+        orderTableBody.innerHTML = markup;
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+}
+
+function renderItems(items) {
+  let parsedItems = Object.values(items);
+  console.log("PARS", parsedItems);
+  return parsedItems
+    .map((menuItem) => {
+      return `
+    <p>${menuItem.item.name}-${menuItem.qty} pcs </p>`;
+    })
+    .join("");
 }
 
 function generateMarkup(orders) {
-  return orders
-    .map((order) => {
+  return orders.map((order) => {
       return `
                 <tr>
                 <td class="border px-4 py-2 text-green-900">
@@ -26,6 +41,7 @@ function generateMarkup(orders) {
                     <div>${renderItems(order.items)}</div>
                 </td>
                 <td class="border px-4 py-2">${order.customerId.name}</td>
+                <td class="border px-4 py-2">${order.customerId.phone}</td>
                 <td class="border px-4 py-2">${order.address}</td>
                 <td class="border px-4 py-2">
                     <div class="inline-block relative w-64">
@@ -83,4 +99,4 @@ function generateMarkup(orders) {
     })
     .join("");
 }
-module.exports = initAdmin;
+export default initAdmin;
