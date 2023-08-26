@@ -45,6 +45,18 @@ function orderController() {
         res.redirect("/");
       }
     },
+
+
+    async show(req,res){
+      const order=await Order.findById(req.params.id)
+      //user authorize user
+      if(req.user._id.toString()===order.customerId.toString()){
+         return res.render('customers/singleOrder',{order})
+      }
+      
+        return redirect('/')
+      
+    }
   };
 }
 

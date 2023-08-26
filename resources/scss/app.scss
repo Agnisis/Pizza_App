@@ -91,3 +91,103 @@ section.login{
 a.link{
     color:$primary;
 }
+
+
+
+section.status{
+    background: $secondary;
+    min-height: calc(100vh - 86px);
+}
+.status_box ul li span{
+    position: relative;
+    padding-left: 20px;
+}
+.status_box ul li span:after{
+    content:'';
+    position: absolute;
+    left: -10px;
+    top: 30%;
+    background: $dark ;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 1px 10px $secondary;
+   
+}
+
+
+
+//icons
+
+.status_box ul{
+    margin-left: 84px;
+}
+.status_box ul li span:before{
+    
+    font-family:"Line Awesome Free";
+    font-size: 45px;
+    font-weight: 800;
+    position: absolute;
+    left: -90px;
+    top:50% ;
+    transform: translateY(-50%);
+    color:inherit;
+
+}
+.status_box ul li:nth-child(1) span:before{
+    content: '\f46c';
+}
+.status_box ul li:nth-child(2) span:before {
+    content: '\f058';
+}.status_box ul li:nth-child(3) span:before {
+    content: '\f818';
+}.status_box ul li:nth-child(4) span:before {
+    content: '\f0d1';
+}.status_box ul li:nth-child(5) span:before {
+    content: '\f59a';
+}
+
+.status_box ul li{
+  position: relative;
+}
+//line
+.status_box ul li:before{
+    content: "";
+    margin-top: 10px;
+    position: absolute;
+    top: 0;
+    left: -6px;
+    width: 2px;
+    height: 100%;
+    background: $dark;
+}
+
+
+//lastdot
+.status_box ul li:nth-child(5) span:after{
+    box-shadow: 0 20px 1px 20px $secondary;
+}
+
+
+.status_box ul li.step-completed:before{
+
+    background: $gray;
+}
+.status_box ul li.step-completed span:after {
+
+    background: $gray;
+}.status_box ul li.step-completed span {
+
+   color: $gray;
+}
+
+//current status
+.status_box ul li.current span {
+
+    color: $primary;
+}
+.status_box ul li.step-completed span:after {
+
+    background: $primary;
+}
+

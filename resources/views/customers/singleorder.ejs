@@ -1,0 +1,23 @@
+<section class="status">
+  <div class="container mx-auto p-7">
+    <div class="status_box w-2/3 mx-auto">
+      <div class="flex justify-between items-center my-4">
+        <h1 class="text-xl font-bold">Track Delivery Status</h1>
+        <h4
+          class="text-green-600 font-semibold cursor-pointer text-xs bg-slate-200 rounded-full px-2 p-1"
+        >
+          <%=order._id%>
+        </h4>
+      </div>
+      <ul class="flex flex-col mt-10">
+        <li class="status_line text-xl pb-16"><span>Order Placed</span></li>
+        <li class="status_line text-xl pb-16">
+          <span>Order Confirmation</span>
+        </li>
+        <li class="status_line text-xl pb-16"><span>Preparation</span></li>
+        <li class="status_line text-xl pb-16"><span>Out for Delivery</span></li>
+        <li class="status_line text-xl"><span>Completed</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
