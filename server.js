@@ -61,7 +61,8 @@ app.use(
 
 
 //passport config 
-const passportInit=require('./app/config/passport')
+const passportInit=require('./app/config/passport');
+const { log } = require('console');
 passportInit(passport)
 
 
@@ -105,9 +106,24 @@ app.set('view engine', 'ejs');
 require('./routes/web')(app)
 
 //server setup
-app.listen(PORT, () => {
+const server=app.listen(PORT, () => {
   console.log('====================================');
   console.log(`listening on port  ${PORT}`);
   console.log("Backend server is running ");
   console.log('====================================');
+})
+
+
+
+//socket
+
+const io=require('socket.io')(server)
+io.on('connection',(socket)=>{
+  //private rooms
+  //join
+ 
+  socket.on('join',(orderId)=>{
+    
+        socket.join(orderId)
+  })
 })

@@ -186,8 +186,13 @@ section.status{
 
     color: $primary;
 }
-.status_box ul li.step-completed span:after {
+.status_box ul li.current span:after {
 
     background: $primary;
 }
 
+.status_box ul li small{
+    float: right;
+    font-size: 14px;
+    margin-top: 8px;
+}

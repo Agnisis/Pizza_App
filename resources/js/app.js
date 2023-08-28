@@ -1,7 +1,8 @@
 import axios from "axios";
 import Noty from "noty";
-// const initAdmin=require('./admin')
-import initAdmin from './admin'
+import moment from 'moment'
+import initAdmin from "./admin";
+
 let addToCart = document.querySelectorAll(".add-to-cart");
 
 let cartCounter = document.querySelector("#cart-counter");
@@ -49,7 +50,38 @@ if (alertMsg) {
 
 initAdmin();
 
+let hiddenInput = document.querySelector("#hiddenInput");
+let order = hiddenInput ? hiddenInput.value : null;
+order = JSON.parse(order);
+let time=document.createElement('small')
+let statuses = document.querySelectorAll(".status_line");
+function updateStatus(order) {
+  statuses.forEach((status) => {
+    let stepCompleted = true;
+    let dataProp = status.dataset.status;
+    if (stepCompleted) {
+      status.classList.add("step-completed");
+    }
+
+    if (dataProp === order.status) {
+      stepCompleted = false;
+      time.innerText=moment(order.updatedAt).format('hh:mm A')
+      status.appendChild(time)
+      if (status.nextElementSibling) {
+        status.nextElementSibling.classList.add("current");
+      }
+    }
+  });
+}
+
+updateStatus(order);
 
 
+//socket
+let socket=io()
+//join
 
-//
+if(order){
+  
+  socket.emit('join',`order_${order._id}`)
+}

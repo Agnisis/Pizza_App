@@ -11,7 +11,7 @@ function statusController() {
           { _id: req.body.orderId },
           { status: req.body.status }
         );
-  
+         
         return res.redirect("/admin/orders");
       } catch (err) {
         console.error(err);
