@@ -14,6 +14,7 @@ const flash = require('express-flash');
 const MongoStore = require('connect-mongo')
 const url = 'mongodb://localhost:27017/Pizza';
 const passport=require('passport')
+const Emitter=require('events')
 
 
 
@@ -44,6 +45,11 @@ connection.once('open', () => {
 //   mongooseConnection: connection,
 //   collection: 'sessions',
 // });
+
+
+//event emitter
+const eventEmitter=new Emitter()
+app.set('eventEmitter',eventEmitter)  //bind with app 
 
 // Session config
 app.use(flash());
@@ -126,4 +132,10 @@ io.on('connection',(socket)=>{
     
         socket.join(orderId)
   })
+})
+
+
+
+eventEmitter.on('orderUpdated',(data)=>{
+  io.to(`order_${data.id}`).emit('orderUpdated',data)
 })
