@@ -1,7 +1,9 @@
 import axios from "axios";
 import Noty from "noty";
-import moment from 'moment'
+import moment from "moment";
 import initAdmin from "./admin";
+
+
 
 let addToCart = document.querySelectorAll(".add-to-cart");
 
@@ -53,17 +55,17 @@ initAdmin();
 let hiddenInput = document.querySelector("#hiddenInput");
 let order = hiddenInput ? hiddenInput.value : null;
 order = JSON.parse(order);
-let time=document.createElement('small')
+let time = document.createElement("small");
 let statuses = document.querySelectorAll(".status_line");
+
+
 function updateStatus(order) {
+  statuses.forEach((status) => {
+    status.classList.remove("step-completed");
+    status.classList.remove("current");
+  });
 
-statuses.forEach((status)=>{
-  status.classList.remove('step-completed')
-  status.classList.remove('current');
-
-})
-
-let stepCompleted = true;
+  let stepCompleted = true;
   statuses.forEach((status) => {
     let dataProp = status.dataset.status;
     if (stepCompleted) {
@@ -72,8 +74,8 @@ let stepCompleted = true;
 
     if (dataProp === order.status) {
       stepCompleted = false;
-      time.innerText=moment(order.updatedAt).format('hh:mm A')
-      status.appendChild(time)
+      time.innerText = moment(order.updatedAt).format("hh:mm A");
+      status.appendChild(time);
       status.classList.add("current");
       // if (status.nextElementSibling) {
       // }
@@ -82,28 +84,26 @@ let stepCompleted = true;
 }
 
 updateStatus(order);
-
+import io from "socket.io-client";
 
 //socket
-let socket=io()
+let socket = io();
 //join
 
-if(order){
-  
-  socket.emit('join',`order_${order._id}`)
+if (order) {
+  socket.emit("join", `order_${order._id}`);
 }
 
-
-let adminAreaPath=window.location.pathname
-if(adminAreaPath.includes('admin')){
-  socket.emit('join','adminRoom')
+let adminAreaPath = window.location.pathname;
+if (adminAreaPath.includes("admin")) {
+  socket.emit("join", "adminRoom");
 }
 
-socket.on('orderUpdated',(data)=>{
-  const updatedOrder={...order}
-  updatedOrder.updatedAt=moment().format()
-  updatedOrder.status=data.status
-  updateStatus(updatedOrder)
+socket.on("orderUpdated", (data) => {
+  const updatedOrder = { ...order };
+  updatedOrder.updatedAt = moment().format();
+  updatedOrder.status = data.status;
+  updateStatus(updatedOrder);
   new Noty({
     type: "success",
     timeout: 1000,
@@ -111,4 +111,4 @@ socket.on('orderUpdated',(data)=>{
     progressBar: false,
     // layout:'bottomLeft'
   }).show();
-})
+});

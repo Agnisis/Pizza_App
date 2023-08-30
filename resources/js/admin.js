@@ -1,7 +1,5 @@
 import axios from "axios";
-import Noty from "noty";
 import moment from "moment";
-import { Socket } from "socket.io";
 function initAdmin() {
   const orderTableBody = document.querySelector("#orderTableBody");
   let orders = [];
@@ -99,7 +97,5 @@ function generateMarkup(orders) {
         `;
     })
     .join("");
-  
-    Socket.on('')
 }
 export default initAdmin;
