@@ -17,11 +17,6 @@ const passport=require('passport')
 const Emitter=require('events')
 
 
-
-
-
-
-
 // Mongo DB connection
 mongoose.connect(url, {
   useNewUrlParser: true,
@@ -34,19 +29,6 @@ connection.on('error', (err) => {
 connection.once('open', () => {
   console.log('Database Connected to Mongo DB Local Host');
 });
-
-
-
-
-
-
-
-// Session store
-// const mongoStore = new MongoStore({
-//   mongooseConnection: connection,
-//   collection: 'sessions',
-// });
-
 
 //event emitter
 const eventEmitter=new Emitter()
@@ -97,20 +79,10 @@ app.use(expresslayout);
 app.set('views', path.join(__dirname, '/resources/views'))
 app.set('view engine', 'ejs');
 
-// app.get('/',(req,res)=>{
-//     // res.snde("Hello from server");
-//     res.render('home');
-//     })
-// app.get('/cart',(req,res)=>{
-// res.render('customers/cart')
-// })
 
-
-
-
-
-//roputing setup
+//routing setup
 require('./routes/web')(app)
+
 
 //server setup
 const server=app.listen(PORT, () => {
@@ -122,21 +94,16 @@ const server=app.listen(PORT, () => {
 
 
 
-//socket
-
+//socket connection
 const io=require('socket.io')(server)
 io.on('connection',(socket)=>{
   //private rooms
   //join
- 
   socket.on('join',(orderId)=>{
     
         socket.join(orderId)
   })
 })
-
-
-
 eventEmitter.on('orderUpdated',(data)=>{
   io.to(`order_${data.id}`).emit('orderUpdated',data)
 })

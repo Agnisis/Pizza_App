@@ -1,65 +1,152 @@
-[{
-  "_id": {
-    "$oid": "5eee651f739f8c674fd736ee"
+[
+  {
+    "_id": {
+      "$oid": "5eee651f739f8c674fd736e1"
+    },
+    "name": "Chicken Feast ",
+    "image": "Chicken_Feast.jpg",
+    "price": "850",
+    "type": "Pizza",
+    "size": "medium"
   },
-  "name": "Margherita",
-  "image": "Veg_Extravaganz.jpg",
-  "price": "250",
-  "size": "small"
-},{
-  "_id": {
-    "$oid": "5eee6671a27a66807cf2bea3"
+  {
+    "_id": {
+      "$oid": "5eee651f739f8c674fd736e2"
+    },
+    "name": "Chicken Boxer ",
+    "image": "Iconic Pizza.png",
+    "price": "850",
+    "type": "Pizza",
+    "size": "large"
   },
-  "name": "Marinara",
-  "image": "pizza.png",
-  "price": "300",
-  "size": "medium"
-},{
-  "_id": {
-    "$oid": "5eee6692a27a66807cf2bea4"
+  {
+    "_id": {
+      "$oid": "5eee6671a27a66807cf2bea3"
+    },
+    "name": "Farmhouse",
+    "image": "Farmhouse.jpg",
+    "price": "300",
+    "type": "Pizza",
+    "size": "medium"
   },
-  "name": "Carbonara",
-  "image": "pizza.png",
-  "price": "200",
-  "size": "small"
-},{
-  "_id": {
-    "$oid": "5eee66a5a27a66807cf2bea5"
+  {
+    "_id": {
+      "$oid": "5eee6692a27a66807cf2bea4"
+    },
+    "name": "Indian Tandoori Paneer",
+    "image": "IndianTandooriPaneer.jpg",
+    "price": "200",
+    "type": "Pizza",
+    "size": "small"
   },
-  "name": "Americana",
-  "image": "pizza.png",
-  "price": "500",
-  "size": "large"
-},{
-  "_id": {
-    "$oid": "5eee66c4a27a66807cf2bea6"
+  {
+    "_id": {
+      "$oid": "5eee66a5a27a66807cf2bea5"
+    },
+    "name": "Paneer Makhni Pizza",
+    "image": "Paneer_Makhni.jpg",
+    "price": "1500",
+    "type": "Pizza",
+    "size": "large"
   },
-  "name": "Chicken Mushroom",
-  "image": "pizza.png",
-  "price": "350",
-  "size": "medium"
-},{
-  "_id": {
-    "$oid": "5eee66cfa27a66807cf2bea7"
+  {
+    "_id": {
+      "$oid": "5eee66c4a27a66807cf2bea6"
+    },
+    "name": "Pepper Barbeque & Onion Pizza",
+    "image": "Pepper_Barbeque_&_Onion.jpg",
+    "price": "650",
+    "type": "Pizza",
+    "size": "large"
   },
-  "name": "Paneer pizza",
-  "image": "pizza.png",
-  "price": "200",
-  "size": "small"
-},{
-  "_id": {
-    "$oid": "5eee66eea27a66807cf2bea8"
+  {
+    "_id": {
+      "$oid": "5eee66cfa27a66807cf2bea7"
+    },
+    "name": "Spiced Doubled Pizza",
+    "image": "spiced_doubled.jpg",
+    "price": "350",
+    "type": "Pizza",
+    "size": "small"
   },
-  "name": "Vegies pizza",
-  "image": "pizza.png",
-  "price": "600",
-  "size": "large"
-},{
-  "_id": {
-    "$oid": "5eee6717a27a66807cf2bea9"
+  {
+    "_id": {
+      "$oid": "5eee66eea27a66807cf2bea8"
+    },
+    "name": "Veg Extravaganz Pizza",
+    "image": "Veg_Extravaganz.jpg",
+    "price": "600",
+    "type": "Pizza",
+    "size": "large"
   },
-  "name": "Pepperoni",
-  "image": "pizza.png",
-  "price": "500",
-  "size": "medium"
-}]
+  {
+    "_id": {
+      "$oid": "5eee6717a27a66807cf2bea9"
+    },
+    "name": "Veggies Bluster Pizza",
+    "image": "Veggies Bluster.jpg",
+    "price": "1200",
+    "type": "Pizza",
+    "size": "medium"
+  },
+  {
+    "_id": {
+      "$oid": "5eee651f739f8c67fd736e10"
+    },
+    "name": "Corn & Cheese",
+    "image": "Corn&Cheese.jpg",
+    "price": "850",
+    "type": "Pizza",
+    "size": "medium"
+  },
+  {
+    "_id": {
+      "$oid": "5eee651f73f8c674fd736e11"
+    },
+    "name": "Chicken Max",
+    "image": "Chicken_Max.jpg",
+    "price": "450",
+    "type": "Pizza",
+    "size": "small"
+  },
+  {
+    "_id": {
+      "$oid": "5eee651f79f8c674fd73ee12"
+    },
+    "name": "Chicken Mania",
+    "image": "Chicken_Mania.jpg",
+    "price": "850",
+    "type": "Pizza",
+    "size": "medium"
+  },
+  {
+    "_id": {
+      "$oid": "5eee651f79f8c674fd73ee16"
+    },
+    "name": "Special 120",
+    "image": "p1.jpg",
+    "price": "550",
+    "type": "Pizza",
+    "size": "medium"
+  },
+  {
+    "_id": {
+      "$oid": "5eee651f79f8c674fd73ee67"
+    },
+    "name": "Chicken 65",
+    "image": "p2.jpg",
+    "price": "700",
+    "type": "Pizza",
+    "size": "large"
+  },
+  {
+    "_id": {
+      "$oid": "5eee651f79f8c674fd73ee82"
+    },
+    "name": "Veg Bonanza",
+    "image": "p3.jpg",
+    "price": "850",
+    "type": "Pizza",
+    "size": "small"
+  }
+]

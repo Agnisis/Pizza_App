@@ -1,7 +1,4 @@
-<section class="cart">
-
-
-
+<section class="cart  min-h-screen">
 
     <% if(session.cart){%>
         <div class="order container mx-auto w-1/2 pt-10">
@@ -13,28 +10,24 @@
 
 
                 <% for(let pizza of Object.values(session.cart.items)){ %>
+    <div class="pizza-list">
+        <div class="flex items-center my-3">
 
-
-                    <div class="pizza-list ">
-                        <div class="flex items-center my-3">
-                            <img src="/images/<%=pizza.item.image%>" alt="" class="w-24">
-                            <div class="ml-4 flex-1">
-                                <h1>
-                                    <%=pizza.item.name%>
-                                </h1>
-                                <span>
-                                    <%=pizza.item.size%>
-                                </span>
-                            </div>
-
-                            <span class="flex-1">
-                                <%=pizza.qty%>
-                            </span>
-                            <span class="font-bold text-lg">
-                                <%=pizza.item.price*pizza.qty%>
-                            </span>
-                        </div>
-                        <% } %>
+            <!-- <% console.log(pizza.item.type)%> -->
+            <% if (pizza.item.type === "Pizza") { %>
+                <img src="/images/pizza/<%= pizza.item.image %>" alt="No Image" class="w-24">
+            <% } else { %>
+                <img src="/images/others/<%= pizza.item.image %>" alt="No Image" class="w-24">
+            <% } %>
+            <div class="ml-4 flex-1">
+                <h1><%= pizza.item.name %></h1>
+                <span><%= pizza.item.size %></span>
+            </div>
+            <span class="flex-1"><%= pizza.qty %></span>
+            <span class="font-bold text-lg"><%= pizza.item.price * pizza.qty %></span>
+        </div>
+    </div>
+<% } %>
 
 
 
@@ -44,7 +37,7 @@
                             <hr>
 
                             <div class="text-right py-4">
-                                <div class="po">
+                                <div class="po mb-4">
                                     <span class="text-lg font-bold">Total Amount :</span>
                                     <span class="amount font-bold text-lg ">₹ <%=session.cart.totalPrice%></span>
                                 </div>
@@ -58,7 +51,7 @@
                     " placeholder="Address">
                                             <div>
                                                 <button type="Submit"
-                                                    class="bg-green-500 hover:bg-orange-700 text-white font-bold py-2 px-4  my-5 rounded-full ">Order
+                                                    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4  my-5 rounded-full ">Order
                                                     Now</button>
                                             </div>
                                         </form>
@@ -66,7 +59,7 @@
                                     <%}else{%>
 
                                         <a href="/"
-                                            class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4  my-5 rounded-full">Login
+                                            class="bg-green-500 m hover:bg-green-700 text-white font-bold py-2 px-4  my-5 rounded-full">Login
                                             to continue</a>
                                         <%}%>
 

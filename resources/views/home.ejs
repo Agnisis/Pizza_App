@@ -1,78 +1,96 @@
+<!-- hero section -->
 
-    <!-- hero section -->
+<section class="hero py-16 pl-14 pr-12 mx-auto container">
+  <div class="container mx-auto flex items-center justify-center mx-4 px-4">
+    <div class="mr-20">
+      <h6 class="text-4xl mt-5"><em>What are you waiting for ?</em></h6>
+      <h1 class="text-8xl font-bold">Dont'wait !</h1>
+      <button
+        class="btn-primary text-xl rounded-full px-6 py-2 text-white font-bold mt-4"
+      >
+        Order Now
+      </button>
+    </div>
+    <div class="">
+      <img
+        src="/images/herobanners/pizzaop.jpg"
+        alt=""
+        class="my-2 rounded-sm p-3 border-2 border-green-400"
+      />
+    </div>
+    
+  </div>
+</section>
+<!--XXXXXXXXXXX hero section XXXXXXXXXXXXX-->
 
-
-    <section class="hero py-16 pl-14 pr-12 mx-auto container">
-        <div class="container mx-auto flex items-center justify-between mx-4 px-4">
-            <div class="w-1/2">
-                <img src="/images/IndianTandooriPaneer.jpg" alt="" class="my-2 rounded-full border-2 border-green-400 w-3/4">
-                <h6 class="text-lg mt-5"><em>What are you waiting for ?</em></h6>
-                <h1 class="text-6xl font-bold">Dont'wait !</h1>
-                <button class=" btn-primary rounded-full px-6 py-2 text-white font-bold mt-4">Order Now</button>
-            </div>
-            <img src="/images/pizzaop.jpg" alt="" class="rounded-lg w-3/4 h-1/4">
-            <div>
-
-            </div>
-        </div>
-    </section>
-    <!--XXXXXXXXXXX hero section XXXXXXXXXXXXX-->
-
-
-
-    <!-- menu section -->
+<!-- menu section -->
 
 <section class="menu container mx-auto p-8">
-    <h1 class="text-xl font-bold mb-8">All Pizzas</h1>
+  <h1 class="text-3xl font-bold mb-8 text-red-700 italic">Our Delicious Pizzas</h1>
 
-    <div class=" grid grid-cols-5 col-gap-14 row-gap-16">
+  <div class="grid grid-cols-5 col-gap-14 row-gap-16">
+    <% pizzas.forEach(function(pizza){ %>
 
-        <% pizzas.forEach(function(pizza){ %>
-                  
-            <div class=" w-72 my-3 rounded-lg bg-green-100 gap-x-2" >
-                <img src="/images/<%= pizza.image%>" alt="" class="h-40 mb-4 mx-auto my-3">
-                <div class="text-center ">
-                    <h2 class="mb-4 text-lg "><%= pizza.name%></h2>
-                    <span class="size text-xs py-1 px-4 rounded-full uppercase"><%= pizza.size%></span>
-                    <div class="flex items-center justify-around my-6">
-                        <span class="text-lg font-bold">₹ <%= pizza.price%>/-</span>
-                        <button data-pizza="<%= JSON.stringify(pizza)%>" class="add-to-cart px-6 py-1 flex items-center font-bold">
-                            <span>+</span>
-                            <span class="mx-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-       <% }) %>
-       
-
-        
-      
-
-
-        
-
-       
-
-
-       
-
-
-        
+    <div class="w-72 my-3 rounded-lg bg-yellow-100">
+      <img
+        src="/images/pizza/<%= pizza.image%>"
+        alt=""
+        class="h-40 mb-4 mx-auto my-3 rounded-2xl"
+      />
+      <div class="text-center">
+        <h2 class="mb-4 text-lg"><%= pizza.name%></h2>
+        <span class="size text-xs py-1 px-4 rounded-full uppercase"
+          ><%= pizza.size%></span
+        >
+        <div class="flex items-center justify-around my-6">
+          <span class="text-lg font-bold">₹ <%= pizza.price%>/-</span>
+          <button
+            data-pizza="<%= JSON.stringify(pizza)%>"
+            class="add-to-cart px-6 py-1 flex items-center font-bold"
+          >
+            <span>+</span>
+            <span class="mx-4">Add</span>
+          </button>
+        </div>
+      </div>
     </div>
 
-
+    <% }) %>
+  </div>
 </section>
 
 
 
 
+<section class="hero py-16 pl-14 pr-12 mx-auto container">
+  <div class="container mx-auto flex items-center justify-between mx-4 px-4">
+    <img
+      src="/images/banners/Home_payzapp_20201029.jpg"
+      alt=""
+      class="rounded-lg w-6/12 mr-3"
+    />
+    <img
+      src="/images/banners/hut300.312236d18a76801105b271168dc4fab9.1.jpg"
+      alt=""
+      class="rounded-lg w-6/12 h-80"
+    />
+    
+  </div>
+</section>
 
-
-
-
-
-
-
+<section class="hero py-16 pl-14 pr-12 mx-auto container">
+  <div class=" flex justify-between mx-4 px-4">
+    <img
+      src="/images/banners/Home_Paytm_20210519.jpg"
+      alt=""
+      class="rounded-lg w-6/12 mr-3"
+    />
+    <img
+      src="/images/banners/Home_Freecharge_20210405.jpg"
+      alt=""
+      class="rounded-lg w-6/12"
+    />
+    
+  </div>
+</section>
 

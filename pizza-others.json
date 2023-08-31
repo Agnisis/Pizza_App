@@ -1,0 +1,133 @@
+[
+  {
+    "_id": {
+      "$oid": "5eee651f739f8c674fd736ee"
+    },
+    "name": "Burger Pizza",
+    "image": "160790_Burger_Pizza_427X298_Pixel (1).jpg",
+    "price": "200",
+    "type": "other",
+    "size": "small"
+  },
+  {
+    "_id": {
+      "$oid": "5eee6671a27a66807cf2bea3"
+    },
+    "name": "Sliced Sandwich",
+    "image": "banner2.JPG",
+    "price": "300",
+    "type": "other",
+    "size": "medium"
+  },
+  {
+    "_id": {
+      "$oid": "5eee6692a27a66807cf2bea4"
+    },
+    "name": "Burger Chicken Pizza",
+    "image": "Burger_Pizza_Non.jpg",
+    "price": "400",
+    "type": "other",
+    "size": "small"
+  },
+  {
+    "_id": {
+      "$oid": "5eee66a5a27a66807cf2bea5"
+    },
+    "name": "Creamy Tomato Veg",
+    "image": "CreamyTomatoVeg_N_(3).jpg",
+    "price": "500",
+    "type": "other",
+    "size": "large"
+  },
+  {
+    "_id": {
+      "$oid": "5eee66c4a27a66807cf2bea6"
+    },
+    "name": "Moroccan Pasta Veg",
+    "image": "MoroccanPastaVeg_N_(1).jpg",
+    "price": "350",
+    "type": "other",
+    "size": "medium"
+  },
+  {
+    "_id": {
+      "$oid": "5eee66cfa27a66807cf2bea7"
+    },
+    "name": "Paneer Tikka Masala",
+    "image": "PaneerTikkaMasala_N.jpg",
+    "price": "200",
+    "type": "other",
+    "size": "small"
+  },
+  {
+    "_id": {
+      "$oid": "5eee66eea87a66807cf2bea8"
+    },
+    "name": "Chicken king Sandwich",
+    "image": "images (1).jpg",
+    "price": "600",
+    "type": "other",
+    "size": "large"
+  },
+  {
+    "_id": {
+      "$oid": "5eee66eea275668067f2be56"
+    },
+    "name": "Petai Paratha",
+    "image": "images (2).jpg",
+    "price": "500",
+    "type": "other",
+    "size": "medium"
+  },
+  {
+    "_id": {
+      "$oid": "5eee66eea275668067f2bec8"
+    },
+    "name": "Dahi Burger",
+    "image": "images (3).jpg",
+    "price": "600",
+    "type": "other",
+    "size": "large"
+  },
+  {
+    "_id": {
+      "$oid": "5eee66eea27566807662bec8"
+    },
+    "name": "Chicken Kabab Roll",
+    "image": "images (4).jpg",
+    "price": "600",
+    "type": "other",
+    "size": "large"
+  },
+
+  {
+    "_id": {
+      "$oid": "5eee66eea27566797cf2bec8"
+    },
+    "name": "Chicken Rolls",
+    "image": "images (5).jpg",
+    "price": "600",
+    "type": "other",
+    "size": "large"
+  },
+  {
+    "_id": {
+      "$oid": "5eee66eea27566806442bec8"
+    },
+    "name": "Egg Sandwich",
+    "image": "download.jpg",
+    "price": "600",
+    "type": "other",
+    "size": "large"
+  },
+  {
+    "_id": {
+      "$oid": "5eee66eea275668067f2be45"
+    },
+    "name": "King Burger",
+    "image": "images.jpg",
+    "price": "600",
+    "type": "other",
+    "size": "large"
+  }
+]
