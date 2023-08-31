@@ -21,6 +21,8 @@ const Emitter=require('events')
 mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 30000,
+  socketTimeoutMS: 45000,
 });
 const connection = mongoose.connection;
 connection.on('error', (err) => {
