@@ -4,7 +4,7 @@ const moment = require("moment");
 function orderController() {
   return {
     store(req, res) {
-      // console.log(req.body)
+      
       //validate req
       const { phone, address } = req.body;
       if (!phone || !address) {
@@ -20,9 +20,10 @@ function orderController() {
       order
         .save()
         .then((result) => {
-          req.flash("success", "order Placed Succesfully");
+          // req.flash("success", "order Placed Succesfully");
           delete req.session.cart;
-          res.redirect("/customer/orders");
+          // res.redirect("/customer/orders");
+          return res.json({message: "order Placed Succesfully"});
         })
         .catch((err) => {
           req.flash("error", "Something Went Wrong");
