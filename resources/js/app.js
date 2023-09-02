@@ -2,6 +2,7 @@ import axios from "axios";
 import Noty from "noty";
 import moment from "moment";
 import initAdmin from "./admin";
+import {initStripe} from "./stripe"
 
 let addToCart = document.querySelectorAll(".add-to-cart");
 let cartCounter = document.querySelector("#cart-counter");
@@ -82,40 +83,10 @@ function updateStatus(order) {
 
 updateStatus(order);
 
-//Ajax Call for form submit to order data for payement
 
-const paymentForm = document.querySelector("#payment-form");
-if (paymentForm) {
-  paymentForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    let formData = new FormData(paymentForm);
-    let formObject = {};
-    for (let [key, value] of formData.entries()) {
-      formObject[key] = value;
-    }
-    axios
-      .post("/orders", formObject)
-      .then((res) => {
-        new Noty({
-          type: "success",
-          timeout: 1000,
-          text: res.data.message,
-          progressBar: false,
-        }).show();
-      })
-      setTimeout(()=>{
-        window.location.href='/customer/orders'
-      },1000)
-      .catch((err) => {
-        new Noty({
-          type: "error",
-          timeout: 1000,
-          text: res.data.message,
-          progressBar: false,
-        }).show();
-      });
-  });
-}
+initStripe();
+
+
 
 import io from "socket.io-client";
 //socket
