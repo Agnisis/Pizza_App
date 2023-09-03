@@ -47,7 +47,7 @@
                                     <form action="/orders" method="post" class="mt-12 " id="payment-form">
 
                                         <div class="relative w-1/2 ml-auto">
-                                            <select id="paymentType"
+                                            <select id="paymentType" name="paymentType"
                                                 class=" block bg-white border border-gray-400 text-gray-900 text-lg  focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 mb-10 ">
                                                 <option value="cod">Cash on Delivery</option>
                                                 <option value="card">Online Payment With Card</option>
@@ -58,7 +58,7 @@
 
                                         <input type="text" class="border border-gray-400 p-2 w-1/2 mb-5"
                                             placeholder="Phone Number" name="phone">
-                                        <input type="text" name="address" class="border border-gray-400 p-2 w-1/2 mt-4"
+                                        <input type="text" name="address" class="mb-5 border border-gray-400 p-2 w-1/2 mt-4"
                                             placeholder="Address">
                                         <div>
                                             <div id="card-element"></div>
