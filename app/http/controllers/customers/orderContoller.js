@@ -49,9 +49,11 @@ function orderController() {
           });
         }
       } catch (error) {
-        console.error(error);
+       
         delete req.session.cart;
-        return res.status(500).json({ message: "Something went wrong" });
+        // req.flash("error", "Error fetching order");
+        // return res.status(500).json({ message: "Something went wrong" });
+        return res.json({message: "Order placed successfully Payment Not Done"});
       }
     },
 
@@ -62,7 +64,7 @@ function orderController() {
         });
         res.render("customers/orders", { orders, moment });
       } catch (error) {
-        console.error(error);
+        
         req.flash("error", "Error fetching orders");
         res.redirect("/");
       }
@@ -79,7 +81,7 @@ function orderController() {
           return res.redirect("/");
         }
       } catch (error) {
-        console.error(error);
+        
         req.flash("error", "Error fetching order");
         res.redirect("/");
       }

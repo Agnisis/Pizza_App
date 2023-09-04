@@ -10,7 +10,7 @@
                 <% for(let pizza of Object.values(session.cart.items)){ %>
                     <div class="pizza-list">
                         <div class="flex items-center my-3">
-                            <!-- <% console.log(pizza.item.type)%> -->
+                          
                             <% if (pizza.item.type==="Pizza" ) { %>
                                 <img src="/images/pizza/<%= pizza.item.image %>" alt="No Image" class="w-24">
                                 <% } else { %>

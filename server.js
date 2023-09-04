@@ -12,9 +12,10 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const flash = require('express-flash');
 const MongoStore = require('connect-mongo')
-const url = 'mongodb://localhost:27017/Pizza';
+const url = 'mongodb+srv://agnisisdutta16:agnisis@cluster0.swe6tay.mongodb.net/?retryWrites=true&w=majority';
 const passport=require('passport')
 const Emitter=require('events')
+const cors = require("cors");
 
 
 // Mongo DB connection
@@ -53,7 +54,6 @@ app.use(
 
 //passport config 
 const passportInit=require('./app/config/passport');
-const { log } = require('console');
 passportInit(passport)
 
 
