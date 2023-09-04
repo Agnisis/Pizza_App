@@ -12,7 +12,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const flash = require('express-flash');
 const MongoStore = require('connect-mongo')
-const url = 'mongodb+srv://agnisisdutta16:agnisis@cluster0.swe6tay.mongodb.net/?retryWrites=true&w=majority';
+const url = process.env.MONGO_DB_URI;
 const passport=require('passport')
 const Emitter=require('events')
 const cors = require("cors");
@@ -22,15 +22,16 @@ const cors = require("cors");
 mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  serverSelectionTimeoutMS: 30000,
-  socketTimeoutMS: 45000,
+  serverSelectionTimeoutMS: 30000, // Increase this value
+  socketTimeoutMS: 45000, // Increase this value
 });
+
 const connection = mongoose.connection;
 connection.on('error', (err) => {
   console.error('Connection Failed:', err);
 });
 connection.once('open', () => {
-  console.log('Database Connected to Mongo DB Local Host');
+  console.log('Database Connected to Mongo DB');
 });
 
 //event emitter
