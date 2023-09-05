@@ -76,7 +76,7 @@ function orderController() {
 
         // User authorization check
         if (req.user._id.toString() === order.customerId.toString()) {
-          return res.render("customers/singleOrder", { order });
+          return res.render("customers/singleorder", { order });
         } else {
           return res.redirect("/");
         }
